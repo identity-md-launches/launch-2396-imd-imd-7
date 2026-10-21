@@ -1,0 +1,173 @@
+{
+  "scope": "Complete deliverable file bytes; excludes .git, assignment inputs, ignored caches and test/scratch. Not a measurement of a platform-generated Git bundle.",
+  "limitBytes": 8388608,
+  "totalFileBytes": 1042993,
+  "fileCount": 39,
+  "productionExportBytes": 168981,
+  "ignoreFileBytes": 221,
+  "checks": {
+    "within8MiBRawBudget": true,
+    "ignoreWithinExplicit1024ByteBudget": true,
+    "relativeHTMLAndCSSAssetsExist": true,
+    "noRepositoryNodeModules": true,
+    "noDeliverySymlinksOrDependencyArchives": true
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 221
+    },
+    {
+      "path": "DELIVERY-BUDGET.md",
+      "bytes": 1715
+    },
+    {
+      "path": "DESIGN.md",
+      "bytes": 9217
+    },
+    {
+      "path": "README.md",
+      "bytes": 7452
+    },
+    {
+      "path": "artifacts/browser-results.json",
+      "bytes": 7941
+    },
+    {
+      "path": "artifacts/design-guide-LICENSE.txt",
+      "bytes": 11964
+    },
+    {
+      "path": "artifacts/desktop-1440.png",
+      "bytes": 219655
+    },
+    {
+      "path": "artifacts/export-manifest.json",
+      "bytes": 1004
+    },
+    {
+      "path": "artifacts/keyboard-focus.png",
+      "bytes": 73542
+    },
+    {
+      "path": "artifacts/mobile-390-full.png",
+      "bytes": 205574
+    },
+    {
+      "path": "artifacts/mobile-390.png",
+      "bytes": 72663
+    },
+    {
+      "path": "artifacts/package-size.json",
+      "bytes": 3372
+    },
+    {
+      "path": "artifacts/taste-summary.json",
+      "bytes": 3244
+    },
+    {
+      "path": "artifacts/validation.md",
+      "bytes": 12282
+    },
+    {
+      "path": "dist/assets/index-CNHQRwwv.css",
+      "bytes": 14479
+    },
+    {
+      "path": "dist/assets/index-CTpSQP7s.js",
+      "bytes": 5325
+    },
+    {
+      "path": "dist/favicon.svg",
+      "bytes": 243
+    },
+    {
+      "path": "dist/fonts/OFL.txt",
+      "bytes": 4388
+    },
+    {
+      "path": "dist/fonts/noto-sans-sc-subset.woff2",
+      "bytes": 67256
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 13157
+    },
+    {
+      "path": "dist/share.png",
+      "bytes": 64133
+    },
+    {
+      "path": "index.html",
+      "bytes": 13057
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 40629
+    },
+    {
+      "path": "package.json",
+      "bytes": 647
+    },
+    {
+      "path": "public/favicon.svg",
+      "bytes": 243
+    },
+    {
+      "path": "public/fonts/OFL.txt",
+      "bytes": 4388
+    },
+    {
+      "path": "public/fonts/noto-sans-sc-subset.woff2",
+      "bytes": 67256
+    },
+    {
+      "path": "public/share.png",
+      "bytes": 64133
+    },
+    {
+      "path": "scripts/assets/share-card.svg",
+      "bytes": 1297
+    },
+    {
+      "path": "scripts/check-browser.mjs",
+      "bytes": 19972
+    },
+    {
+      "path": "scripts/generate-share.mjs",
+      "bytes": 870
+    },
+    {
+      "path": "scripts/libraries.mjs",
+      "bytes": 398
+    },
+    {
+      "path": "src/assets.d.ts",
+      "bytes": 24
+    },
+    {
+      "path": "src/calculator.ts",
+      "bytes": 4733
+    },
+    {
+      "path": "src/main.ts",
+      "bytes": 4617
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 16482
+    },
+    {
+      "path": "tests/calculator.test.ts",
+      "bytes": 4863
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 420
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 137
+    }
+  ]
+}

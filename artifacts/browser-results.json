@@ -1,0 +1,305 @@
+{
+  "target": "dist/ at /preview/",
+  "browsers": [
+    {
+      "engine": "chromium",
+      "available": true,
+      "version": "145.0.7632.6"
+    },
+    {
+      "engine": "webkit",
+      "available": false
+    }
+  ],
+  "checks": [
+    {
+      "name": "chromium: A: default example, all six requested outputs",
+      "passed": true,
+      "evidence": {
+        "profit": "15.00",
+        "total": "25.00",
+        "revenue": "40.00",
+        "executions": "12",
+        "imd": "6",
+        "imdCost": "12.00",
+        "other": "5.00",
+        "human": "8.00",
+        "breakEven": "25.00"
+      }
+    },
+    {
+      "name": "chromium: B: editing S immediately changes profit to −5.00 and status to 亏损",
+      "passed": true,
+      "evidence": {
+        "profit": "−5.00",
+        "total": "25.00",
+        "revenue": "20.00",
+        "executions": "12",
+        "imd": "6",
+        "imdCost": "12.00",
+        "other": "5.00",
+        "human": "8.00",
+        "breakEven": "25.00"
+      }
+    },
+    {
+      "name": "chromium: C: clear writes zero to all fields and outputs; balanced, no errors",
+      "passed": true,
+      "evidence": {
+        "profit": "0.00",
+        "total": "0.00",
+        "revenue": "0.00",
+        "executions": "0",
+        "imd": "0",
+        "imdCost": "0.00",
+        "other": "0.00",
+        "human": "0.00",
+        "breakEven": "0.00"
+      }
+    },
+    {
+      "name": "chromium: Load example restores all fields and correct results",
+      "passed": true
+    },
+    {
+      "name": "chromium: Batch retry semantics and one-time extra costs",
+      "passed": true
+    },
+    {
+      "name": "chromium: Invalid input in every field suspends and clears result numbers, with associated Chinese errors",
+      "passed": true,
+      "evidence": {
+        "invalidCombinations": 44,
+        "recovered": true
+      }
+    },
+    {
+      "name": "chromium: Error recovery button focuses first invalid field; clear recovers",
+      "passed": true
+    },
+    {
+      "name": "chromium: Exact decimals, deferred rounding, tiny nonzero profit/IMD guidance",
+      "passed": true
+    },
+    {
+      "name": "chromium: Responsive layout at 320, 390, 768, 820, 1024 and 1440",
+      "passed": true,
+      "evidence": [
+        {
+          "viewport": 320,
+          "content": 320
+        },
+        {
+          "viewport": 390,
+          "content": 390
+        },
+        {
+          "viewport": 768,
+          "content": 768
+        },
+        {
+          "viewport": 820,
+          "content": 820
+        },
+        {
+          "viewport": 1024,
+          "content": 1024
+        },
+        {
+          "viewport": 1440,
+          "content": 1440
+        }
+      ]
+    },
+    {
+      "name": "chromium: Long valid results remain visible without horizontal overflow at 320",
+      "passed": true,
+      "evidence": {
+        "viewport": 320,
+        "content": 320
+      }
+    },
+    {
+      "name": "chromium: 200% text enlargement reflows at 390 (not native browser zoom)",
+      "passed": true,
+      "evidence": {
+        "viewport": 390,
+        "content": 390
+      }
+    },
+    {
+      "name": "chromium: Keyboard entry, buttons, skip link and visible focus styling",
+      "passed": true,
+      "evidence": {
+        "tabOrder": [
+          "N",
+          "R",
+          "U",
+          "P",
+          "E",
+          "H",
+          "S"
+        ],
+        "focus": {
+          "style": "solid",
+          "width": "3px",
+          "color": "rgb(49, 94, 208)"
+        }
+      }
+    },
+    {
+      "name": "chromium: Accessible labels, descriptions, result and error states: axe WCAG 2.2 AA",
+      "passed": true,
+      "evidence": {
+        "states": [
+          "profit",
+          "loss",
+          "balanced",
+          "invalid"
+        ],
+        "violations": 0
+      }
+    },
+    {
+      "name": "chromium: Reduced motion, forced colors, local font and metadata assets",
+      "passed": true,
+      "evidence": {
+        "reducedMotionTransition": "0s",
+        "image": "/preview/share.png",
+        "icon": "/preview/favicon.svg",
+        "font": true
+      }
+    },
+    {
+      "name": "chromium: Rendered text, status, control boundaries and focus contrast",
+      "passed": true,
+      "evidence": [
+        {
+          "selector": "h1",
+          "property": "color",
+          "foreground": "rgb(24, 45, 66)",
+          "background": "rgb(245, 247, 249)",
+          "ratio": 13.1,
+          "threshold": 4.5
+        },
+        {
+          "selector": ".hint",
+          "property": "color",
+          "foreground": "rgb(82, 97, 117)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 6.31,
+          "threshold": 4.5
+        },
+        {
+          "selector": ".button-primary",
+          "property": "color",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(35, 73, 170)",
+          "ratio": 8.06,
+          "threshold": 4.5
+        },
+        {
+          "selector": ".result-description",
+          "property": "color",
+          "foreground": "rgb(183, 199, 214)",
+          "background": "rgb(24, 45, 66)",
+          "ratio": 8.14,
+          "threshold": 4.5
+        },
+        {
+          "selector": ".profit-amount",
+          "property": "color",
+          "foreground": "rgb(245, 248, 252)",
+          "background": "rgb(24, 45, 66)",
+          "ratio": 13.21,
+          "threshold": 4.5
+        },
+        {
+          "selector": ".status-badge",
+          "property": "color",
+          "foreground": "rgb(164, 236, 205)",
+          "background": "rgb(36, 76, 70)",
+          "ratio": 7.04,
+          "threshold": 4.5
+        },
+        {
+          "selector": "#N",
+          "property": "borderTopColor",
+          "foreground": "rgb(129, 144, 161)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 3.26,
+          "threshold": 3
+        },
+        {
+          "selector": "#clear",
+          "property": "borderTopColor",
+          "foreground": "rgb(129, 144, 161)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 3.26,
+          "threshold": 3
+        },
+        {
+          "selector": "#N",
+          "property": "outlineColor",
+          "foreground": "rgb(49, 94, 208)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 5.77,
+          "threshold": 3
+        },
+        {
+          "selector": ".status-badge",
+          "property": "color",
+          "foreground": "rgb(255, 185, 179)",
+          "background": "rgb(87, 59, 68)",
+          "ratio": 6.07,
+          "threshold": 4.5,
+          "state": "loss"
+        },
+        {
+          "selector": ".status-badge",
+          "property": "color",
+          "foreground": "rgb(215, 226, 242)",
+          "background": "rgb(53, 73, 96)",
+          "ratio": 7.06,
+          "threshold": 4.5,
+          "state": "balanced"
+        },
+        {
+          "selector": "#N-error",
+          "property": "color",
+          "foreground": "rgb(180, 35, 44)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 6.53,
+          "threshold": 4.5
+        }
+      ]
+    },
+    {
+      "name": "chromium: Refresh restores fictional A; no storage, upload, third-party request or missing resource",
+      "passed": true,
+      "evidence": {
+        "storage": {
+          "local": 0,
+          "session": 0,
+          "cookies": ""
+        },
+        "externalRequests": 0,
+        "consoleErrors": 0,
+        "missingResources": 0,
+        "resources": [
+          "/preview/",
+          "/preview/fonts/noto-sans-sc-subset.woff2",
+          "/preview/assets/index-CTpSQP7s.js",
+          "/preview/assets/index-CNHQRwwv.css"
+        ]
+      }
+    },
+    {
+      "name": "chromium: JavaScript-disabled view does not show fabricated results",
+      "passed": true
+    }
+  ],
+  "limitations": [
+    "WebKit could not launch because required host shared libraries are unavailable. No Safari or physical iOS claim is made."
+  ]
+}

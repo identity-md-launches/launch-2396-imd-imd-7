@@ -1,0 +1,22 @@
+{
+  "name": "imd-task-cost-calculator",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "简体中文 IMD 任务成本与毛利静态计算器",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test tests/calculator.test.ts",
+    "test:browser": "node scripts/check-browser.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "playwright": "1.58.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}

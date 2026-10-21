@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f5f7f9"/>
+<rect x="64" y="60" width="64" height="64" rx="16" fill="#182d42"/>
+<path d="M82 78h28M82 90h8m12 0h8M82 102h8m12 0h8" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+<g font-family="sans-serif" fill="#182d42">
+<text x="152" y="102" font-size="32" font-weight="600">IMD 成本工具</text>
+<text x="64" y="252" font-size="56" font-weight="600">任务成本与毛利计算器</text>
+<text x="68" y="314" font-size="28" fill="#526175">为一批任务估算成本，找到合适的客户收费。</text>
+<rect x="64" y="373" width="1072" height="148" rx="16" fill="#182d42"/>
+<text x="100" y="431" font-size="24" fill="#b7c7d6">手动输入</text>
+<text x="100" y="478" font-size="28" fill="#f5f8fc">任务、费用与收入</text>
+<text x="460" y="431" font-size="24" fill="#b7c7d6">即时估算</text>
+<text x="460" y="478" font-size="28" fill="#f5f8fc">成本与毛利</text>
+<text x="820" y="431" font-size="24" fill="#b7c7d6">本地计算</text>
+<text x="820" y="478" font-size="28" fill="#f5f8fc">不保存、不上传</text>
+<text x="64" y="578" font-size="20" fill="#526175">仅为成本估算，不代表实际收益承诺。</text>
+</g></svg>

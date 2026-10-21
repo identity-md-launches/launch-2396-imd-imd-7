@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7f9" />
+    <meta name="description" content="手动填写任务、重试、IMD费用与整批收入，即时估算任务总成本、毛利和盈亏平衡收费。纯前端计算，不上传输入。" />
+    <meta property="og:title" content="IMD任务成本与毛利计算器" />
+    <meta property="og:description" content="任务成本算清楚，客户报价更有依据。仅按手动输入估算，不代表实际收益承诺。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:image" content="./share.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="IMD任务成本与毛利计算器，手动输入、即时估算、仅本地计算" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preload" href="./fonts/noto-sans-sc-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <title>IMD任务成本与毛利计算器</title>
+    <script type="module" crossorigin src="./assets/index-CTpSQP7s.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CNHQRwwv.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#calculator">跳至输入区</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#main" aria-label="IMD 成本工具，返回顶部">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M9 9h14M9 15h4m6 0h4M9 21h4m6 0h4" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+          <span>IMD <span class="brand-divider" aria-hidden="true">/</span> <span class="brand-label">成本工具</span></span>
+        </a>
+        <a class="help-link" href="#formulas">计算说明 <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main id="main" class="page">
+      <div class="page-heading">
+        <div>
+          <h1>IMD任务成本与毛利计算器</h1>
+          <p>为一批任务估算成本，找到合适的客户收费。</p>
+        </div>
+        <span class="local-note"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg> 仅在本地计算</span>
+      </div>
+
+      <div class="workspace">
+        <section class="input-panel" aria-labelledby="input-heading">
+          <div class="section-heading">
+            <h2 id="input-heading">任务参数</h2>
+            <div class="actions">
+              <button id="load-example" class="button button-primary" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>载入示例</button>
+              <button id="clear" class="button button-plain" type="button">清空</button>
+            </div>
+          </div>
+          <p id="input-message" class="panel-intro">已载入示例 A，所有示例均为虚构数据。</p>
+
+          <form id="calculator" novalidate autocomplete="off">
+            <fieldset>
+              <legend><span class="group-number" aria-hidden="true">01</span>执行规模</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="N">初始任务次数 <span class="variable">N</span></label>
+                  <div class="input-wrap"><input id="N" name="N" type="text" inputmode="numeric" value="10" aria-describedby="N-hint" spellcheck="false" required /><span class="unit" aria-hidden="true">次</span></div>
+                  <p class="hint" id="N-hint">首次计划执行的任务数。</p>
+                  <p class="field-error" id="N-error" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="R">额外重试次数 <span class="variable">R</span></label>
+                  <div class="input-wrap"><input id="R" name="R" type="text" inputmode="numeric" value="2" aria-describedby="R-hint" spellcheck="false" required /><span class="unit" aria-hidden="true">次</span></div>
+                  <p class="hint" id="R-hint">整批合计，非每个任务的次数。</p>
+                  <p class="field-error" id="R-error" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend><span class="group-number" aria-hidden="true">02</span>执行费用</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="U">每次执行消耗 <span class="variable">U</span></label>
+                  <div class="input-wrap"><input id="U" name="U" type="text" inputmode="decimal" value="0.5" aria-describedby="U-hint" spellcheck="false" required /><span class="unit" aria-hidden="true">IMD</span></div>
+                  <p class="hint" id="U-hint">单位 IMD，首次与重试用量相同。</p>
+                  <p class="field-error" id="U-error" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="P">IMD单价 <span class="variable">P</span></label>
+                  <div class="input-wrap"><input id="P" name="P" type="text" inputmode="decimal" value="2" aria-describedby="P-hint" spellcheck="false" required /><span class="unit" aria-hidden="true">美元/IMD</span></div>
+                  <p class="hint" id="P-hint">美元/IMD，手动填写，无实时行情。</p>
+                  <p class="field-error" id="P-error" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend><span class="group-number" aria-hidden="true">03</span>整批成本与收入</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="E">其他成本 <span class="variable">E</span></label>
+                  <div class="input-wrap"><input id="E" name="E" type="text" inputmode="decimal" value="5" aria-describedby="E-hint" spellcheck="false" required /><span class="unit" aria-hidden="true">美元</span></div>
+                  <p class="hint" id="E-hint">单位美元；整批 Gas、数据等额外成本。</p>
+                  <p class="field-error" id="E-error" hidden></p>
+                </div>
+                <div class="field">
+                  <label for="H">人工验收成本 <span class="variable">H</span></label>
+                  <div class="input-wrap"><input id="H" name="H" type="text" inputmode="decimal" value="8" aria-describedby="H-hint" spellcheck="false" required /><span class="unit" aria-hidden="true">美元</span></div>
+                  <p class="hint" id="H-hint">单位美元；整批人工成本，仅加一次。</p>
+                  <p class="field-error" id="H-error" hidden></p>
+                </div>
+                <div class="field field-full">
+                  <label for="S">客户收费 <span class="variable">S</span></label>
+                  <div class="input-wrap"><input id="S" name="S" type="text" inputmode="decimal" value="40" aria-describedby="S-hint" spellcheck="false" required /><span class="unit" aria-hidden="true">美元</span></div>
+                  <p class="hint" id="S-hint">单位美元；本批任务总收入，不是单次收费。</p>
+                  <p class="field-error" id="S-error" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+          <p class="input-footnote">次数填非负整数，其余填非负数；没有此项时填 0。</p>
+        </section>
+
+        <section id="result-panel" class="result-panel" data-state="profit" aria-labelledby="result-heading">
+          <div class="result-heading"><h2 id="result-heading">本批任务估算</h2><span class="update-label">随输入更新</span></div>
+          <div id="valid-results" hidden>
+            <div class="profit-topline"><h3>毛利 <span class="result-unit">美元</span></h3><span class="status-badge"><span id="status-icon" aria-hidden="true">↗</span><span id="profit-status">盈利</span></span></div>
+            <div class="profit-amount"><span class="currency" aria-hidden="true">$</span><span id="result-profit" data-value></span></div>
+            <p id="profit-explanation" class="result-description"></p>
+            <div class="overview-numbers">
+              <div><span class="metric-label">总成本（美元）</span><strong>$<span id="result-total" data-value></span></strong></div>
+              <div><span class="metric-label">客户收费（美元）</span><strong>$<span id="result-revenue" data-value></span></strong></div>
+            </div>
+            <dl class="execution-summary">
+              <div><dt>总执行次数</dt><dd><span id="result-executions" data-value></span><span class="metric-unit">次</span></dd></div>
+              <div><dt>总IMD消耗</dt><dd><span id="result-imd" data-value></span><span class="metric-unit">IMD</span></dd></div>
+            </dl>
+            <div class="cost-details">
+              <h3>成本明细 <span class="result-unit">美元</span></h3>
+              <dl>
+                <div><dt><span class="cost-marker marker-imd" aria-hidden="true"></span>IMD成本</dt><dd>$<span id="result-imdCost" data-value></span></dd></div>
+                <div><dt><span class="cost-marker marker-other" aria-hidden="true"></span>其他成本</dt><dd>$<span id="result-other" data-value></span></dd></div>
+                <div><dt><span class="cost-marker marker-human" aria-hidden="true"></span>人工验收成本</dt><dd>$<span id="result-human" data-value></span></dd></div>
+              </dl>
+            </div>
+            <div class="break-even"><div><span>盈亏平衡收费</span><span class="metric-label">整批收费达到此数即可覆盖已填成本</span></div><strong>$<span id="result-breakEven" data-value></span><span class="sr-only">美元</span></strong></div>
+            <p id="precision-note" class="precision-note" hidden></p>
+            <p class="rounding-note">美元显示两位小数，IMD 最多六位。仅展示时舍入。</p>
+          </div>
+          <div id="invalid-results" class="invalid-results" hidden>
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v6m0 3v.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <h3>请先检查输入</h3>
+            <p id="error-summary"></p>
+            <button id="fix-input" type="button" class="button button-light">前往修改</button>
+          </div>
+          <noscript><p class="noscript-note">请启用 JavaScript 以使用实时计算。当前未显示任何计算结果。</p></noscript>
+        </section>
+      </div>
+
+      <section id="formulas" class="formula-section" aria-labelledby="formula-heading">
+        <div class="formula-heading"><h2 id="formula-heading">每一笔，都有计算依据</h2><span>计算公式与假设</span></div>
+        <div class="formula-grid">
+          <div class="formula-group"><h3>从执行次数到 IMD 用量</h3><p>总执行次数 <span>= N + R</span></p><p>总IMD消耗 <span>= (N + R) × U</span></p><p>IMD成本 <span>= 总IMD消耗 × P</span></p></div>
+          <div class="formula-group"><h3>从总成本到毛利</h3><p>总成本 <span>= IMD成本 + E + H</span></p><p>毛利 <span>= S − 总成本</span></p><p>盈亏平衡收费 <span>= 总成本</span></p></div>
+        </div>
+        <p class="model-note"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 11v6m0-10v.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span>模型假设：首次执行和每次重试均按相同的 U 计费。其他成本 E 和人工成本 H 各加一次，不随任务次数重复乘算。这只是计算模型，不代表平台实际一定收费或退款。</span></p>
+      </section>
+      <aside class="disclaimer" aria-label="使用提示"><strong>使用提示</strong><p>本工具仅按输入进行成本估算；IMD价格和每次费用需自行核实，结果不代表实际收益承诺。毛利仅扣除已填写成本，不等同于扣除全部经营费用后的净利润。</p></aside>
+    </main>
+    <footer class="site-footer"><span>IMD 任务成本工具</span><span>输入仅在当前页面使用，不保存、不上传。</span></footer>
+    <div id="announcements" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

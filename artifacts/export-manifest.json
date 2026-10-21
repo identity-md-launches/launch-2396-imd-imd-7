@@ -1,0 +1,37 @@
+[
+  {
+    "path": "assets/index-CNHQRwwv.css",
+    "bytes": 14479,
+    "sha256": "7716697e790d98aa5e2012a4d11970271a87c89ebd5a5e214a1c316dbbf287dc"
+  },
+  {
+    "path": "assets/index-CTpSQP7s.js",
+    "bytes": 5325,
+    "sha256": "02a71ebdb49be1bb0aa4d52bb89873423acabb47755c8f148f3945c7a1504e74"
+  },
+  {
+    "path": "favicon.svg",
+    "bytes": 243,
+    "sha256": "7b14b7a18e04e43bb88c30076edcb29047fe23435b22719f4750b9b9255b8045"
+  },
+  {
+    "path": "fonts/OFL.txt",
+    "bytes": 4388,
+    "sha256": "1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9"
+  },
+  {
+    "path": "fonts/noto-sans-sc-subset.woff2",
+    "bytes": 67256,
+    "sha256": "560157b14196f91a527404c8ac71a6c89e1c84da5c869cc83f8bcb3e7c41df62"
+  },
+  {
+    "path": "index.html",
+    "bytes": 13157,
+    "sha256": "007cde661ef2b22902024ddb8acda0b5f613a3a3181de7362c4c3944bca3dcd1"
+  },
+  {
+    "path": "share.png",
+    "bytes": 64133,
+    "sha256": "f2ae9806232f1a7e4aee51f81474e387d61eb0d0d25320ac08669111c5cc0fa6"
+  }
+]
